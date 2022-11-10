@@ -7,20 +7,31 @@ git clone) during the cmake-setup process.
 
 ## Using CMake and Visual Studio, under Windows
 
-Sample setup (in a Windows console, using Git), and considering
-you are already located in this folder:
+### Option 1: Generate Visual Studio solution manually
 
-```
-mkdir build
-cd build
-cmake .. -G "Visual Studio 14 2015 Win64"
-Tennis-Refactoring.sln
-```
+1. Download and install CMake from cmake.org
+2. Sample setup (in a Windows console, using Git), and considering
+   you are already located in this folder:
+   
+   ```
+   mkdir build
+   cd build
+   cmake .. -G "Visual Studio 17 2022"
+   ```
+3. Open Tennis-Kata.sln in Visual Studio 2022
+   Visual Studio should start with the projects in it.
+   You will have four executables, each one for a
+   specific version of initial source code (1, 2, 3 and 4).
+   Tests are already complete, code is ready to refactor!
 
-Visual Studio should start with the projects in it.
-You will have three different projects, each one for a
-specific version of initial source code (1, 2 and 3).
-Tests are already complete, code is ready to refactor!
+### Option 2: Open directly in Visual Sudio 2022
+
+1. Start Visual Studio 2022
+2. Select `Open a local folder`
+3. Select the folder containg this readme.
+4. Visual Studio 2022 will generate a project and you can run tests for variant 1, 2, 3 or 4.
+
+See https://learn.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-170 for more information.
 
 ## Using CMake and Mingw, under Windows
 
