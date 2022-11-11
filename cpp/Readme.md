@@ -34,14 +34,27 @@ git clone) during the cmake-setup process.
 See https://learn.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio?view=msvc-170 for more information.
 
 ## Using CMake and Mingw, under Windows
+1. Install MSYS2 according to https://www.msys2.org/#installation
+1. Install a compiler toolchain according to https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites
+```
+pacman -S --needed base-devel mingw-w64-x86_64-toolchain
+```
+2. Install CMake in MSYS2 according to https://www.msys2.org/docs/cmake/
+```
+pacman -S mingw-w64-x86_64-cmake
+```
+3. Build and run tests
 
 ```
 mkdir build
 cd build
-cmake .. -G "MSYS Makefiles"
+cmake .. -G "MinGW Makefiles"
 cmake --build .
 ctest
 ```
+## Using CMake and CLion, under Windows
+CLion support CMake and you can open the project according to https://www.jetbrains.com/help/clion/creating-new-project-from-scratch.html.
+
 ## Using cmake under Ubuntu GNU/Linux
 Make sure cmake is installed (available as a snap or in the
 repositories)
@@ -55,3 +68,8 @@ ctest
 If you want to use a specific makefile generator, you can 
 specify it with the -G flag, just as in windows.
 (cmake --help will give you a list of available generators.)
+
+## Using CMake and CLion, under macOS
+CLion support CMake and you can open the project according to https://www.jetbrains.com/help/clion/creating-new-project-from-scratch.html.
+
+
