@@ -44,7 +44,6 @@ pacman -S --needed base-devel mingw-w64-x86_64-toolchain
 pacman -S mingw-w64-x86_64-cmake
 ```
 3. Build and run tests
-
 ```
 mkdir build
 cd build
@@ -69,7 +68,18 @@ If you want to use a specific makefile generator, you can
 specify it with the -G flag, just as in windows.
 (cmake --help will give you a list of available generators.)
 
-## Using CMake and CLion, under macOS
+## Using CLion, under macOS
 CLion support CMake and you can open the project according to https://www.jetbrains.com/help/clion/creating-new-project-from-scratch.html.
 
-
+## Using CMake, under macOS
+1. Install brew.sh
+2. Install cmake
+   `% brew install cmake`
+3. Build and run tests
+```
+mkdir build
+cd build
+cmake .. -G "Unix Makefiles"
+cmake --build .
+ctest
+```
